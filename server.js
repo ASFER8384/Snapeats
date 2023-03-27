@@ -8,6 +8,8 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import foodRoutes from "./routes/foodRoute.js";
 import cors from "cors";
 import mongoose from "mongoose";
+import path from "path";
+import {fileUrlToPath} from "url";
 
 
 //configure env
@@ -16,6 +18,9 @@ dotenv.config();
 //databse config
 connectDB();
 
+const __fileUrlToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 //object app
 const app = express();
 
@@ -23,6 +28,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(express.static(path.join(__dirname, "./Client/build)));
 
 //false query
 mongoose.set('strictQuery', false)
@@ -33,9 +39,8 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/food", foodRoutes);
 
 //GET - Frontpage
-app.get("/", (req, res) => {
-  res.send("<h4> welcome to SnapEats app </h4>");
-});
+app.use("*", function (req,res){
+  res.sendFile(path.join(__dirname, "./Client/build/index.html"));
 
 //PORT
 const PORT = process.env.PORT || 7000;
