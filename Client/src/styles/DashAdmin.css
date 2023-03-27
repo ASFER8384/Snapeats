@@ -1,0 +1,38 @@
+@media (max-width:600px){
+    .table{
+     font-size: 10px;
+    }
+  }
+@media (max-width:600px){
+    .dashboard{
+     margin: 0 !important;
+    }
+  }
+@media (max-width:600px){
+    .card{
+     width: 100% !important;
+    }
+  }
+@media (max-width:600px){
+    .card-ml{
+    margin-left: 20px;
+    }
+  }
+
+
+
+@media (max-width:600px){
+    .table{
+     font-size:8px;
+    }
+  }
+
+
+
+
+
+@media (max-width:600px){
+    .container{
+     font-size: 10px;
+    }
+  }

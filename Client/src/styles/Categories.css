@@ -1,0 +1,12 @@
+/* ===================================
+========= categories  */
+
+.categories-background{
+    background-color: #df2020;
+    color: white;
+}
+.df-cat{
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 5px; */
+}
