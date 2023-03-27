@@ -41,6 +41,7 @@ app.use("/api/v1/food", foodRoutes);
 //GET - Frontpage
 app.use("*", function (req,res){
   res.sendFile(path.join(__dirname, "./Client/build/index.html"));
+})
 
 //PORT
 const PORT = process.env.PORT || 7000;
